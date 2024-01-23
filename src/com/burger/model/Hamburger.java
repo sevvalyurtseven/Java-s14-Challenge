@@ -2,6 +2,9 @@ package com.burger.model;
 
 import com.burger.enums.BreadRollType;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Hamburger implements Addable{
     private String name;
     private String meat;
@@ -46,5 +49,39 @@ public class Hamburger implements Addable{
             }
         }
 
+    }
+
+    public void itemizeHamburger(){
+        StringBuilder builder = new StringBuilder();
+        builder.append("Name: " + name + "\n");
+        builder.append("Meat: " + meat + "\n");
+        builder.append("Bread Roll Type: " + breadRollType + "\n");
+        for(Addition addition : additions){
+            builder.append("Addition Name: " + addition.getName() + "\n");
+            builder.append("Addition Price: " + addition.getPrice() + "\n");
+            price = price + addition.getPrice();
+        }
+        System.out.println(builder);
+        System.out.println("Total Price: " + price);
+        System.out.println("**********************");
+    }
+
+    @Override
+    public String toString() {
+        return "Hamburger{" +
+                "name='" + name + '\'' +
+                ", meat='" + meat + '\'' +
+                ", price=" + price +
+                ", breadRollType=" + breadRollType +
+                ", additions=" + Arrays.toString(additions) +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+        if(obj == null || getClass() != obj.getClass()) return false;
+        Hamburger hamburger = (Hamburger) obj;
+        return Objects.equals(name, hamburger.name);
     }
 }
