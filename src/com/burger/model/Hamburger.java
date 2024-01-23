@@ -2,7 +2,7 @@ package com.burger.model;
 
 import com.burger.enums.BreadRollType;
 
-public class Hamburger {
+public class Hamburger implements Addable{
     private String name;
     private String meat;
     private double price;
@@ -31,5 +31,20 @@ public class Hamburger {
 
     public BreadRollType getBreadRollType() {
         return breadRollType;
+    }
+
+    public Addition[] getAdditions() {
+        return additions;
+    }
+
+    @Override
+    public void addAddition(String name, double price) {
+        for(int i = 0; i < additions.length; i++){
+            if(additions[i] == null){
+                additions[i] = new Addition(name, price);
+                break;
+            }
+        }
+
     }
 }
