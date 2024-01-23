@@ -7,4 +7,5 @@ public class Hamburger {
     private String meat;
     private double price;
     private BreadRollType breadRollType;
+    private Addition[] additions;
 }
