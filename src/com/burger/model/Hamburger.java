@@ -16,4 +16,20 @@ public class Hamburger {
         this.breadRollType = breadRollType;
         this.additions = new Addition[4];
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getMeat() {
+        return meat;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public BreadRollType getBreadRollType() {
+        return breadRollType;
+    }
 }
