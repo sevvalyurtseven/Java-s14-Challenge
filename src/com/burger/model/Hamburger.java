@@ -61,9 +61,11 @@ public class Hamburger implements Addable{
         builder.append("Meat: " + meat + "\n");
         builder.append("Bread Roll Type: " + breadRollType + "\n");
         for(Addition addition : additions){
+            if(addition != null){
             builder.append("Addition Name: " + addition.getName() + "\n");
             builder.append("Addition Price: " + addition.getPrice() + "\n");
             price = price + addition.getPrice();
+        }
         }
         System.out.println(builder);
         System.out.println("Total Price: " + price);
