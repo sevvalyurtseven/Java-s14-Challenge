@@ -12,4 +12,18 @@ public class DeluxeBurger extends Hamburger {
         this.drink = drink;
         this.cips = cips;
     }
+
+    @Override
+    public void addAddition(String name, double price) {
+        System.out.println("\n Deluxe Burger için yeni malzeme eklenemez.");
+    }
+
+    @Override
+    public void itemizeHamburger() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("DRINK: " + drink.getDrinkType() + "\n");
+        builder.append("CIPS: " + cips.getCipsType() + "\n");
+        System.out.println(builder);
+        super.itemizeHamburger();
+    }
 }
