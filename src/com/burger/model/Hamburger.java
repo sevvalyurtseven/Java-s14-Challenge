@@ -32,6 +32,10 @@ public class Hamburger implements Addable{
         return price;
     }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public BreadRollType getBreadRollType() {
         return breadRollType;
     }

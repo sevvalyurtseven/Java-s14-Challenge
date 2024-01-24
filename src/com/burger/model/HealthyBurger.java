@@ -27,4 +27,19 @@ public class HealthyBurger extends Hamburger{
             healthyAddition2 = new Addition(name, price);
         }
     }
+
+    @Override
+    public void itemizeHamburger() {
+        StringBuilder builder = new StringBuilder();
+        if(healthyAddition1 != null){
+            builder.append("HealthyAddition1: " + getHealthyAddition1().getName() + "\n");
+            setPrice(getPrice() + getHealthyAddition1().getPrice());
+        }
+        if(healthyAddition2 != null){
+            builder.append("HealthyAddition2: " + getGetHealthyAddition2().getName() + "\n");
+            setPrice(getPrice() + getGetHealthyAddition2().getPrice());
+        }
+        System.out.println(builder);
+        super.itemizeHamburger();
+    }
 }
