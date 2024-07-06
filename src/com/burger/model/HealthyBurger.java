@@ -38,11 +38,11 @@ public class HealthyBurger extends Hamburger{
         StringBuilder builder = new StringBuilder();
         if(healthyAddition1 != null){
             builder.append("HealthyAddition1: " + getHealthyAddition1().getName() + "\n");
-            setPrice(getPrice() + getHealthyAddition1().getPrice());
+            builder.append("HealthyAddition1 Price: " + getHealthyAddition1().getPrice() + "\n");
         }
         if(healthyAddition2 != null){
             builder.append("HealthyAddition2: " + getHealthyAddition2().getName() + "\n");
-            setPrice(getPrice() + getHealthyAddition2().getPrice());
+            builder.append("HealthyAddition1 Price: " + getHealthyAddition2().getPrice() + "\n");
         }
         System.out.println(builder);
         super.itemizeHamburger();
