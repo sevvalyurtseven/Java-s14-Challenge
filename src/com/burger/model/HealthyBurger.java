@@ -14,7 +14,7 @@ public class HealthyBurger extends Hamburger{
         return healthyAddition1;
     }
 
-    public Addition getGetHealthyAddition2() {
+    public Addition getHealthyAddition2() {
         return healthyAddition2;
     }
 
@@ -22,9 +22,14 @@ public class HealthyBurger extends Hamburger{
     public void addAddition(String name, double price) {
         if(healthyAddition1 == null){
             healthyAddition1 = new Addition(name, price);
+            setPrice(getPrice() + getHealthyAddition1().getPrice());
         }
         else if (healthyAddition2 == null){
             healthyAddition2 = new Addition(name, price);
+            setPrice(getPrice() + getHealthyAddition2().getPrice());
+        }
+        else {
+            System.out.println("Ekstra malzeme 2 taneden fazla olamaz!");
         }
     }
 
@@ -36,8 +41,8 @@ public class HealthyBurger extends Hamburger{
             setPrice(getPrice() + getHealthyAddition1().getPrice());
         }
         if(healthyAddition2 != null){
-            builder.append("HealthyAddition2: " + getGetHealthyAddition2().getName() + "\n");
-            setPrice(getPrice() + getGetHealthyAddition2().getPrice());
+            builder.append("HealthyAddition2: " + getHealthyAddition2().getName() + "\n");
+            setPrice(getPrice() + getHealthyAddition2().getPrice());
         }
         System.out.println(builder);
         super.itemizeHamburger();
